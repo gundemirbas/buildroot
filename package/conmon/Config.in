@@ -1,0 +1,12 @@
+config BR2_PACKAGE_CONMON
+  bool conmon
+  depends on BR2_USE_WCHAR # glib2
+  depends on BR2_TOOLCHAIN_HAS_THREADS # glib2
+  depends on BR2_USE_MMU # glib2
+  select BR2_PACKAGE_LIBGLIB2
+  select BR2_PACKAGE_LIBSECCOMP
+  help
+    conmon is a monitoring and communication tool between containers
+    and a container runtime. conmon is regularly used as an
+    interface between runc/crun and podman/CRI-O.
+    
